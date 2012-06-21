@@ -19,17 +19,17 @@
     NSTimer *_timer;
     AwesomeMenuItem *_addButton;
     
-    id<AwesomeMenuDelegate> _delegate;
+    id<AwesomeMenuDelegate> __unsafe_unretained _delegate;
     BOOL _isAnimating;
 }
 @property (nonatomic, copy) NSArray *menusArray;
 @property (nonatomic, getter = isExpanding) BOOL expanding;
-@property (nonatomic, assign) id<AwesomeMenuDelegate> delegate;
+@property (nonatomic, unsafe_unretained) id<AwesomeMenuDelegate> delegate;
 
-@property (nonatomic, retain) UIImage *image;
-@property (nonatomic, retain) UIImage *highlightedImage;
-@property (nonatomic, retain) UIImage *contentImage;
-@property (nonatomic, retain) UIImage *highlightedContentImage;
+@property (nonatomic) UIImage *image;
+@property (nonatomic) UIImage *highlightedImage;
+@property (nonatomic) UIImage *contentImage;
+@property (nonatomic) UIImage *highlightedContentImage;
 
 @property (nonatomic, assign) CGFloat nearRadius;
 @property (nonatomic, assign) CGFloat endRadius;
